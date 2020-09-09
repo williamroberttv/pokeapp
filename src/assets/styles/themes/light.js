@@ -8,7 +8,9 @@ export default {
     background: '#E5E5E5',
     text: {
       primary: '#ffffff',
-      secundary: '#72808E',
+      subtitles: '#72808E',
+      main: '#1A1A1A',
+      footer: '#666666',
     },
   },
 };

@@ -1,5 +1,13 @@
 import React from 'react';
-import { Container, Wrap, Socials, Logo } from './styles';
+import {
+  Container,
+  Wrap,
+  Main,
+  Mail,
+  Socials,
+  SocialLogos,
+  Logo,
+} from './styles';
 import { FiMail } from 'react-icons/fi';
 
 import facebook from '../../assets/images/facebook.svg';
@@ -13,18 +21,21 @@ function Footer() {
       <Wrap>
         <Socials>
           <h1>PokeApp</h1>
-          <div>
-            <div>
+          <Main>
+            <Mail>
               <FiMail size={18} />
               <p>email@testeweb.com</p>
-            </div>
-            <img src={facebook} alt="Facebook Logo" />
-            <img src={instagram} alt="Instagram Logo" />
-            <img src={youtube} alt="Youtube Logo" />
-          </div>
+            </Mail>
+            <SocialLogos>
+              <img src={facebook} alt="Facebook Logo" />
+              <img src={instagram} alt="Instagram Logo" />
+              <img src={youtube} alt="Youtube Logo" />
+            </SocialLogos>
+          </Main>
         </Socials>
         <Logo>
-          <p>2020 © Todos os direitos reservados.</p>
+          <h3>2020 © Todos os direitos reservados.</h3>
+          <p>Desenvolvido por</p>
           <img src={logo} alt="Logo da Yooh" />
         </Logo>
       </Wrap>

@@ -18,8 +18,19 @@ export const Wrap = styled.div`
     display: flex;
     align-items: center;
     h2 {
-      margin-left: 30px;
+      margin-left: 20px;
       font-size: 32px;
+      @media (max-width: 364px) {
+        text-align: center;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    width: 90%;
+    div {
+      h2 {
+        font-size: 28px;
+      }
     }
   }
 `;
@@ -27,6 +38,9 @@ export const Wrap = styled.div`
 export const Socials = styled.div`
   button {
     margin-right: 45px;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   img {
     width: 35px;
@@ -36,5 +50,12 @@ export const Socials = styled.div`
     border: 1px solid #ffebe0;
     border-radius: 16px;
     cursor: pointer;
+    @media (max-width: 364px) {
+      width: 30px;
+      height: 30px;
+      padding: 8px;
+      margin-right: 0px;
+      margin-left: 10px;
+    }
   }
 `;

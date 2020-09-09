@@ -9,7 +9,7 @@ export default createGlobalStyle`
  body{
   background:${(props) => props.theme.colors.background};
   font-size: 14px;
-  color: ${(props) => props.theme.colors.text.primary};
+  color: ${(props) => props.theme.colors.text.subtitles};
   font-family: Roboto;
  }
  button{
