@@ -8,4 +8,7 @@ export const Container = styled.button`
   width: 200px;
   height: 48px;
   font-size: 16px;
+  &:hover {
+    opacity: 0.9;
+  }
 `;
