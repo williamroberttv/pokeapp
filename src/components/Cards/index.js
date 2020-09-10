@@ -16,7 +16,6 @@ function Cards() {
           offset: 6,
         },
       });
-      console.log(response);
       setLastPokes(response.data.results);
     }
     getPokemons();
@@ -26,8 +25,8 @@ function Cards() {
     <Container>
       <h2>Últimos pokemons</h2>
       <Wrap>
-        {lastPokes.map((pokes) => (
-          <div>
+        {lastPokes.map((pokes, index) => (
+          <div key={index}>
             <img src={avatar} alt="Avatar" />
             <h1>{handleUppercase(pokes.name)}</h1>
           </div>

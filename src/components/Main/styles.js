@@ -18,6 +18,9 @@ export const PokeCardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  @media (min-width: 1440px) {
+    width: 50%;
+  }
   @media (max-width: 1337px) {
     justify-items: center;
     margin: 0 auto;
@@ -25,6 +28,7 @@ export const PokeCardsContainer = styled.div`
   @media (max-width: 705px) {
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 `;
 

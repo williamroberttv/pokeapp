@@ -3,7 +3,8 @@ import {
   Container,
   PokeCardsContainer,
   PokeCards,
-  Card,CardButtonsContainer,
+  Card,
+  CardButtonsContainer,
   CardButtons,
   PikachuSection,
   TextSection,
@@ -17,7 +18,6 @@ import handleUppercase from '../../utils/stringToUppercase';
 import Button from '../Button';
 import api from '../../services/api';
 
-import avatar from '../../assets/images/avatar.png';
 import ArrowLeftImg from '../../assets/images/arrow-left.svg';
 import ArrowRightImg from '../../assets/images/arrow-right.svg';
 import PokebolaImg from '../../assets/images/pokerbola.png';
@@ -61,11 +61,12 @@ function Main() {
       <PokeCardsContainer>
         {pokemonDetail.map((pokemon, index) => (
           <PokeCards
+            key={pokemon.data.id}
             className={cardSelect === index + 1 ? 'block-card' : false}
           >
             <h1>{handleUppercase(pokemon.data.name)}</h1>
             <Card>
-              <img src={avatar} alt="Avatar" />
+              <img src={pokemon.data.sprites.front_default} alt="Avatar" />
             </Card>
             <ArrowLeft onClick={swipeCardLeft}>
               <img className="arrow-left" src={ArrowLeftImg} alt="Avatar" />
