@@ -3,10 +3,14 @@ import { Container, Wrap } from './styles';
 import api from '../../services/api';
 
 import handleUppercase from '../../utils/stringToUppercase';
-import avatar from '../../assets/images/avatar.png';
 
 function Cards() {
   const [lastPokes, setLastPokes] = useState([]);
+
+  async function getPokeNames(x) {
+    const response = await api.get(`pokemon/${x}`);
+    setLastPokes((state) => [...state, response.data]);
+  }
 
   useEffect(() => {
     async function getPokemons() {
@@ -16,7 +20,13 @@ function Cards() {
           offset: 6,
         },
       });
-      setLastPokes(response.data.results);
+
+      const pokenames = response.data.results;
+
+      var i;
+      for (i = 0; i < 6; i++) {
+        getPokeNames(pokenames[i].name);
+      }
     }
     getPokemons();
   }, []);
@@ -25,9 +35,9 @@ function Cards() {
     <Container>
       <h2>Últimos pokemons</h2>
       <Wrap>
-        {lastPokes.map((pokes, index) => (
-          <div key={index}>
-            <img src={avatar} alt="Avatar" />
+        {lastPokes.map((pokes) => (
+          <div key={pokes.id}>
+            <img src={pokes.sprites.front_default} alt="Avatar" />
             <h1>{handleUppercase(pokes.name)}</h1>
           </div>
         ))}
